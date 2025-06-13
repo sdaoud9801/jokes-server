@@ -6,7 +6,7 @@ const app = Express();
 
 app.use(
     cors({
-        origin: "https://sdaoud9801.github.io/jokes/",
+        origin: "https://sdaoud9801.github.io",
         optionsSuccessStatus: "200",
         credentials: true
     })
