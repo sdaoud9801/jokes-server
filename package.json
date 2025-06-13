@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "database": "nodemon --env-file=.env model/createUser.js",
-    "start": "nodemon --env-file=.env app.js"
+    "start": "nodemon --env-file=.env app.js",
+    "build": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "vercel": "^43.1.0"
   }
 }
