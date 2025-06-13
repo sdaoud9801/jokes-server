@@ -26,16 +26,20 @@ authRouter.post("/createuser", async (req, res) => {
 
 authRouter.post("/login", async (req, res) => {
     try {
-        let {username,password} = req.body;
-        let authenticated = await authenticateUser(username,password);
-        if(authenticated) {
+        let { username, password } = req.body;
+        let authenticated = await authenticateUser(username, password);
+        if (authenticated) {
             let auth = createJwt(username);
-            res.cookie("auth",auth);
+            res.cookie("auth", auth, {
+                httpOnly: true,
+                secure: true,         
+                sameSite: 'none'       
+            });
             res.json({
                 status: "success"
             });
         } else {
-            res.json ({
+            res.json({
                 status: "failure",
                 message: "incorrect password"
             })
