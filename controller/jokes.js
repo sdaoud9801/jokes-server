@@ -9,6 +9,7 @@ const jokesRouter = Express.Router();
 jokesRouter.use(cookieParser());
 jokesRouter.use(Express.json());
 jokesRouter.use((req,res,next)=>{
+    console.log(req.cookies);
     let token = req.cookies.auth;
     console.log(token);
     if(!token) {
