@@ -6,7 +6,7 @@ const app = Express();
 
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://sdaoud9801.github.io/jokes",
         optionsSuccessStatus: "200",
         credentials: true
     })
@@ -15,6 +15,6 @@ app.use(
 app.use("/auth", authRouter);
 app.use("/jokes", jokesRouter);
 
-app.listen(5000, () => {
+app.listen(3000, () => {
     console.log("Listening on port 5000");
 });
