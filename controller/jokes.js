@@ -10,6 +10,7 @@ jokesRouter.use(cookieParser());
 jokesRouter.use(Express.json());
 jokesRouter.use((req,res,next)=>{
     let token = req.cookies.auth;
+    console.log(token);
     if(!token) {
         res.json({
             status: "error",
