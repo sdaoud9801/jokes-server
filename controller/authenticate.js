@@ -33,7 +33,7 @@ authRouter.post("/login", async (req, res) => {
             res.cookie("auth", auth, {
                 httpOnly: true,
                 secure: true,         
-                sameSite: 'none'       
+//              sameSite: 'none'       
             });
             res.json({
                 status: "success"

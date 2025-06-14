@@ -9,9 +9,8 @@ const jokesRouter = Express.Router();
 jokesRouter.use(cookieParser());
 jokesRouter.use(Express.json());
 jokesRouter.use((req,res,next)=>{
-    console.log(req.cookies);
     let token = req.cookies.auth;
-    console.log(token);
+    console.log("auth-token: ", token);
     if(!token) {
         res.json({
             status: "error",
@@ -52,7 +51,8 @@ jokesRouter.post("/createjoke", async (req,res)=>{
             })
         } else {
             res.json({
-                status: "error"
+                status: "error",
+                message: "error adding joke to database"
             })
         }
     } catch (e) {
